@@ -1,0 +1,31 @@
+@startuml
+title Sequence - SignUp & Login
+actor Client
+participant "AuthController" as C
+participant "UserService" as S
+database "H2 (JPA)" as DB
+participant "JwtUtil" as JWT
+
+== Sign-Up ==
+Client -> C: POST /sign-up (JSON)
+C -> S: signUp(request)
+S -> DB: existsByEmail(email)?
+DB --> S: false
+S -> DB: save(User, Phones)
+S -> JWT: generate(email, uuid)
+JWT --> S: token
+S --> C: 201 UserResponse(token,...)
+C --> Client: JSON
+
+== Login ==
+Client -> C: GET /login (Authorization: Bearer token)
+C -> S: login(bearerToken)
+S -> JWT: parse(token)
+JWT --> S: claims(email, uid)
+S -> DB: findById(uid)
+DB --> S: User
+S -> JWT: generate(email, uid) **refresh**
+JWT --> S: new token
+S --> C: 200 UserResponse(new token,...)
+C --> Client: JSON
+@enduml

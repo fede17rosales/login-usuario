@@ -1,0 +1,10 @@
+@startuml
+title User Service - Component Diagram
+package "User Service" {
+  [AuthController] --> [UserService]
+  [UserService] --> [UserRepository]
+  [UserService] --> [JwtUtil]
+}
+database "H2 (JPA)" as H2
+[UserRepository] ..> H2 : JPA
+@enduml
