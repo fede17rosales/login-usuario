@@ -1,6 +1,6 @@
-package com.example.userservice.web;
+package com.example.userservice.exception;
 
-import com.example.userservice.dto.ErrorEnvelope;
+import com.example.userservice.dto.exception.ErrorEnvelope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;

@@ -1,5 +1,6 @@
-package com.example.userservice.dto;
+package com.example.userservice.dto.exception;
 
+import com.example.userservice.exception.GlobalExceptionHandler;
 import lombok.*;
 import java.time.Instant;
 import java.util.Collections;
@@ -11,7 +12,7 @@ import java.util.List;
  *
  * <p>Contiene una lista de {@link ErrorItem} con información detallada de cada error.</p>
  *
- * <p>Se utiliza en los controladores y en el {@link com.example.userservice.web.GlobalExceptionHandler}
+ * <p>Se utiliza en los controladores y en el {@link GlobalExceptionHandler}
  * para devolver errores de manera consistente.</p>
  *
  * Ejemplo de uso:

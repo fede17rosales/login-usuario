@@ -1,9 +1,10 @@
-package com.example.userservice.web;
+package com.example.userservice.controller;
 
-import com.example.userservice.dto.ErrorEnvelope;
+import com.example.userservice.dto.exception.ErrorEnvelope;
 import com.example.userservice.dto.SignUpRequest;
 import com.example.userservice.dto.UserResponse;
 import com.example.userservice.service.UserService;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -54,6 +55,7 @@ public class AuthController {
      * @return {@link ResponseEntity} con {@link UserResponse} o {@link ErrorEnvelope}
      */
     @PostMapping(value = "/sign-up", consumes = "application/json", produces = "application/json")
+    @Operation(summary = "Registra un nuevo usuario")
     public ResponseEntity<?> signUp(@Valid @RequestBody SignUpRequest request) {
         try {
             UserResponse resp = userService.signUp(request);

@@ -1,5 +1,6 @@
 package com.example.userservice.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 
 
@@ -30,13 +31,16 @@ public class PhoneDto {
     /**
      * Número de teléfono sin código de área.
      */
+    @Schema(description = "Número de teléfono", example = "12345678")
     private Long number;
     /**
      * Código de la ciudad asociado al número.
      */
+    @Schema(description = "Código de ciudad", example = "11")
     private Integer citycode;
     /**
      * Código del país asociado al número.
      */
+    @Schema(description = "Código de país", example = "54")
     private String countrycode;
 }

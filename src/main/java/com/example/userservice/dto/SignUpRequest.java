@@ -1,5 +1,6 @@
 package com.example.userservice.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 import javax.validation.constraints.*;
 
@@ -36,6 +37,7 @@ public class SignUpRequest {
     /**
      * Nombre del usuario.
      */
+    @Schema(description = "Nombre completo del usuario", example = "Federico Rosales")
     private String name;
 
     /**
@@ -51,6 +53,7 @@ public class SignUpRequest {
     @NotBlank
     @Pattern(regexp = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$",
              message = "email con formato inválido")
+    @Schema(description = "Correo electrónico del usuario", example = "federico@mail.com")
     private String email;
 
     /**
@@ -72,10 +75,12 @@ public class SignUpRequest {
         regexp = "^(?=(?:.*[A-Z]){1})(?!.*[A-Z].*[A-Z])(?=(?:.*\\d){2})(?!.*\\d.*\\d.*\\d)[A-Za-z\\d]{8,12}$",
         message = "password inválida: exactamente 1 mayúscula y 2 dígitos; solo letras y números"
     )
+    @Schema(description = "Contraseña del usuario", example = "MiContraseña123!")
     private String password;
 
     /**
      * Lista de teléfonos asociados al usuario.
      */
+    @Schema(description = "Lista de teléfonos del usuario")
     private List<PhoneDto> phones;
 }
