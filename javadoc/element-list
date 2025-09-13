@@ -1,0 +1,8 @@
+com.example.userservice
+com.example.userservice.config
+com.example.userservice.domain
+com.example.userservice.dto
+com.example.userservice.repository
+com.example.userservice.security
+com.example.userservice.service
+com.example.userservice.web

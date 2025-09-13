@@ -86,11 +86,10 @@ Estructura:
 Códigos típicos: 400 (validación), 401 (token inválido/ausente), 409 (usuario ya existe), 404 (no encontrado).
 
 ## Diagramas UML
-En `/diagrams`:
 
 ![Secuencia](/diagrams/Secuencia%20-%20SignUp%20&%20Login.png)
+
 ![Componente](/diagrams/Componente%20-%20User%20Service.png)
-Puede renderizar con [PlantUML](https://plantuml.com/es/).
 
 ## Notas de implementación
 - Persistencia con Spring Data JPA + H2.
