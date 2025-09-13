@@ -87,9 +87,9 @@ Códigos típicos: 400 (validación), 401 (token inválido/ausente), 409 (usuari
 
 ## Diagramas UML
 En `/diagrams`:
-- `component-diagram.puml` (Diagrama de Componentes)
-- `sequence-signup-login.puml` (Diagrama de Secuencia)
 
+![Secuencia](/diagrams/Secuencia%20-%20SignUp%20&%20Login.png)
+![Componente](/diagrams/Componente%20-%20User%20Service.png)
 Puede renderizar con [PlantUML](https://plantuml.com/es/).
 
 ## Notas de implementación
